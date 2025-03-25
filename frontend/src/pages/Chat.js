@@ -37,7 +37,7 @@ const Chat = () => {
             <p className="font-semibold">🗨️ You: {chat.query}</p>
             <p className="text-gray-800">🤖 Clone: {chat.reply}</p>
 
-            {chat.memories.length > 0 && (
+            {/* {chat.memories.length > 0 && (
               <div className="mt-2">
                 <p className="text-sm font-medium text-gray-600">📚 Memories used:</p>
                 <ul className="list-disc list-inside text-sm text-gray-700">
@@ -46,7 +46,7 @@ const Chat = () => {
                   ))}
                 </ul>
               </div>
-            )}
+            )} */}
           </div>
         ))}
       </div>
