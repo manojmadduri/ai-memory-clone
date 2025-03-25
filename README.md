@@ -1,10 +1,30 @@
-Here's is **complete `README.md`** with all steps, setup, usage, features, and current functionality for your **AI Memory Clone Project** — from the very beginning till now.
+<p align="center">
+  <img src="https://your-project-logo-url.com" alt="AI Memory Clone Logo" width="150"/>
+</p>
+
+<h1 align="center">🧠 AI Memory Clone</h1>
+
+<p align="center">Personal AI with memory recall, semantic search, and image understanding — powered by local or cloud models.</p>
+
+<p align="center">
+  <img alt="Version" src="https://img.shields.io/badge/version-v1.0.0-purple">
+  <img alt="Build" src="https://img.shields.io/badge/build-passing-brightgreen">
+  <img alt="Frontend" src="https://img.shields.io/badge/frontend-React-blue">
+  <img alt="Backend" src="https://img.shields.io/badge/backend-FastAPI-orange">
+  <img alt="Database" src="https://img.shields.io/badge/database-SQLite%20%7C%20PostgreSQL-lightgrey">
+  <img alt="License" src="https://img.shields.io/badge/license-MIT-informational">
+</p>
+
+<p align="center">
+  <a href="https://github.com/manojmadduri/ai-memory-clone"><img src="https://img.shields.io/github/stars/manojmadduri/ai-memory-clone?style=social" alt="GitHub stars"></a>
+  <a href="https://discord.gg/yourlink"><img src="https://img.shields.io/discord/000000000000000000?color=7289DA&label=Discord&logo=discord&style=flat" alt="Discord"></a>
+  <a href="https://twitter.com/yourhandle"><img src="https://img.shields.io/twitter/follow/yourhandle?style=social" alt="Twitter"></a>
+</p>
 
 ---
 
-### 📁 `README.md`
 
-```markdown
+```
 # 🧠 AI Memory Clone
 
 This project creates a personal AI that can:
@@ -194,16 +214,10 @@ ai-memory-clone/
 
 ---
 
-## 👤 Created by: You  
+## 👤 Created by: ManojMadduri  
 Bootstrapped by ChatGPT for a memory-augmented AI.
 
 ```
 
----
 
-Let me know if you want this:
-- Auto-deployed on Railway/Render
-- Version with login/auth
-- Add-on: voice chat + speech-to-text
 
-Want me to generate a downloadable version of this `README.md`?
