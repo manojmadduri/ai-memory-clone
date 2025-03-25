@@ -1,28 +1,35 @@
-# backend/gpt_response.py
 from memory_manager import query_memories
-import requests
-import os
+import subprocess
 
-# Use LM Studio / DeepSeek / Local model URL
-LLM_API_URL = os.getenv("LLM_API_URL", "http://localhost:1234/v1/chat/completions")
+def format_prompt(query, top_memories):
+    prompt = "You are an AI clone of the user. Respond naturally based on these memories:\n\n"
+    for i, m in enumerate(top_memories):
+        prompt += f"{i+1}. {str(m['text'])}\n"  # Ensure it's always a string
+    prompt += f"\nNow answer this: {query}\n"
+    return prompt
 
-def generate_reply_with_memory(query: str):
+def generate_reply_with_memory(query):
     top_memories = query_memories(query)
-    memory_context = "\n".join(f"- {m['content']}" for m in top_memories)
 
-    prompt = f"""You are an AI clone that talks like the user. 
-Below are your past memories:
-{memory_context}
+    # Build prompt from text only
+    prompt = "You are an AI clone of the user. Respond naturally based on these memories:\n\n"
+    for i, m in enumerate(top_memories):
+        prompt += f"{i+1}. {m['text']}\n"
+    prompt += f"\nNow answer this: {query}\n"
 
-Answer the following based on the above:
-Q: {query}
-A:"""
+    result = subprocess.run(
+        ["ollama", "run", "mistral"],
+        input=prompt.encode(),
+        capture_output=True
+    )
 
-    payload = {
-        "model": "gpt-4",  # or your local model name
-        "messages": [{"role": "user", "content": prompt}],
-        "temperature": 0.7
+    response = result.stdout.decode().strip()
+
+    # ✅ Strip out embeddings, return only text memories
+    memory_texts = [m["text"] for m in top_memories]
+
+    return {
+        "reply": response,
+        "memories_used": memory_texts
     }
 
-    res = requests.post(LLM_API_URL, json=payload)
-    return res.json()["choices"][0]["message"]["content"]

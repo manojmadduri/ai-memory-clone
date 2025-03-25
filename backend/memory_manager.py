@@ -1,8 +1,7 @@
 # backend/memory_manager.py
 from sentence_transformers import SentenceTransformer, util
 from datetime import datetime, timedelta
-from supabase_client import supabase
-import numpy as np
+from sqlite_client import insert_memory, fetch_all_memories
 import ast
 import torch
 
@@ -13,12 +12,7 @@ def embed_text(text: str):
 
 def store_memory(text: str, tags=[], image_id=None):
     embedding = embed_text(text)
-    supabase.table("memories").insert({
-        "content": text,
-        "embedding": embedding,
-        "tags": tags,
-        "image_id": image_id,
-    }).execute()
+    insert_memory(text, embedding, tags, image_id)
 
 def get_time_range(time_str):
     now = datetime.now()
@@ -35,7 +29,7 @@ def get_time_range(time_str):
 def query_memories(query, time_filter=None):
     query_vec = model.encode(query, convert_to_tensor=True)
 
-    all_memories = supabase.table("memories").select("*").execute().data
+    all_memories = fetch_all_memories()
     scored = []
     for m in all_memories:
         if "embedding" not in m or not m["embedding"]:

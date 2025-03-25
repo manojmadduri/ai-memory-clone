@@ -59,4 +59,5 @@ async def chat_with_memory(request: Request):
     body = await request.json()
     query = body.get("query", "")
     response = generate_reply_with_memory(query)
-    return {"reply": response}
+    return response  # ✅ Not wrapped in { "reply": response }
+

@@ -206,4 +206,3 @@ Let me know if you want this:
 - Version with login/auth
 - Add-on: voice chat + speech-to-text
 
-Want me to generate a downloadable version of this `README.md`?
