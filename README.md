@@ -214,8 +214,7 @@ ai-memory-clone/
 
 ---
 
-## 👤 Created by: ManojMadduri  
-Bootstrapped by ChatGPT for a memory-augmented AI.
+## 👤 Created by: ManojMadduri 
 
 ```
 
