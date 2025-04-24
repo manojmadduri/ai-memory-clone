@@ -25,7 +25,7 @@
 
 
 ```
-# 🧠 AI Memory Clone
+🧠 AI Memory Clone
 
 This project creates a personal AI that can:
 - 🧠 Store and recall your memories (facts, diary entries, preferences)
@@ -37,13 +37,13 @@ This project creates a personal AI that can:
 
 ## 🏗️ Tech Stack
 
-- **Frontend:** React + Tailwind CSS
-- **Backend:** FastAPI (Python)
-- **Memory Embedding:** `sentence-transformers`
-- **Face Recognition:** `face_recognition` + `dlib`
-- **Image Captioning:** (placeholder, BLIP-like)
-- **LLM:** OpenAI GPT or local-compatible chat model
-- **Database:** Supabase (PostgreSQL & Storage)
+- Frontend: React + Tailwind CSS
+- Backend: FastAPI (Python)
+- Memory Embedding: `sentence-transformers`
+- Face Recognition: `face_recognition` + `dlib`
+- Image Captioning: (placeholder, BLIP-like)
+- LLM: OpenAI GPT or local-compatible chat model
+- Database: Supabase (PostgreSQL & Storage)
 
 ---
 
