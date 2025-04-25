@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://your-project-logo-url.com" alt="AI Memory Clone Logo" width="150"/>
+  <img src="/logo.png" alt="AI Memory Clone Logo" width="150"/>
 </p>
 
 <h1 align="center">🧠 AI Memory Clone</h1>
